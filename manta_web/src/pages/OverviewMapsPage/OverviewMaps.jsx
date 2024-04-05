@@ -45,7 +45,7 @@ export default function OverviewMaps() {
   return (
     <>
       <div className={style.entire}>
-        <APIProvider apiKey="AIzaSyBetskUCsAGwFKKF3xNRwjsNJIEod6tMU4">
+        <APIProvider apiKey="add_api_here">
           <div className={style.top}>
             <Map 
               mapContainerStyle={{ width: '100%', height: '100%' }}
