@@ -1,19 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import style from './datetimebar.module.css';
 
 function Datetimebar() {
-  const now = new Date();
+  const [currentTime, setCurrentTime] = useState(new Date());
 
-  const thailandTime = new Date(now.getTime() + (7 * 60 - now.getTimezoneOffset()) * 60000);
+  useEffect(() => {
+    let animationFrameId;
+
+    const update = () => {
+      const now = new Date();
+      const thailandTime = new Date(now.getTime() + (7 * 60 - now.getTimezoneOffset()) * 60000);
+      setCurrentTime(thailandTime);
+      animationFrameId = requestAnimationFrame(update);
+    };
+
+    animationFrameId = requestAnimationFrame(update);
+    
+    return () => cancelAnimationFrame(animationFrameId);
+  }, []);
 
   const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  const day = days[thailandTime.getDay()];
-  const date = thailandTime.getDate();
-  const month = months[thailandTime.getMonth()];
-  const hour = thailandTime.getHours() % 12 || 12;
-  const minute = thailandTime.getMinutes().toString().padStart(2, '0');
-  const ampm = thailandTime.getHours() < 12 ? 'am' : 'pm';
+  const day = days[currentTime.getDay()];
+  const date = currentTime.getDate();
+  const month = months[currentTime.getMonth()];
+  const hour = currentTime.getHours() % 12 || 12;
+  const minute = currentTime.getMinutes().toString().padStart(2, '0');
+  const ampm = currentTime.getHours() < 12 ? 'am' : 'pm';
 
   const formattedDate = `${day} ${date} ${month} ${hour}:${minute} ${ampm}`;
 
