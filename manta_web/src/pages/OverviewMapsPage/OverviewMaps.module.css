@@ -54,16 +54,16 @@
 
 .dock {
   grid-area: nav;
-  width: 20px;
+  width: 100%;
 }
 
 .Left {
   grid-area: page;
-  display: flex;
+  width: 100%;
 }
 
 .Right {
   grid-area: time;
-  display: flex;
+  width: 100%;
   justify-content: flex-end;
 }
