@@ -1,4 +1,4 @@
-# AI-driven Traffic Management for a Better Bangkok (ATMBB) 🚦🌆
+# AI-driven Traffic Management for a Better Bangkok🚦🌆
 
 ## Introduction
 
