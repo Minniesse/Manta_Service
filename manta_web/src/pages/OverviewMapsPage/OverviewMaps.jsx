@@ -1,9 +1,10 @@
 import style from './OverviewMaps.module.css';
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import { APIProvider, Map, AdvancedMarker, InfoWindow } from "@vis.gl/react-google-maps";
 import Dock from '../../components/Navbar/DockApps';
 import PageBox from '../../components/pagebar/namebar';
 import Datetimebar from '../../components/datebar/datetimebar';
+
 
 export default function OverviewMaps() {
   //set the Map data UI and location
@@ -15,6 +16,19 @@ export default function OverviewMaps() {
     zoom: 8,
     disableDefaultUI: true,
   };
+
+  const [mapTypeId, setMapTypeId] = useState('roadmap');
+
+  const toggleMapType = (type) => {
+    setMapTypeId(prevMapTypeId => {
+      if (type === prevMapTypeId) {
+        return 'roadmap';
+      } else {
+        return type;
+      }
+    });
+  };
+
 
   const weatherData = {
     A: {
@@ -48,7 +62,7 @@ export default function OverviewMaps() {
       <div className={style.entire}>
         <APIProvider apiKey="">
           <div className={style.top}>
-            <Map mapContainerStyle={{ width: '100%', height: '100%' }} options={mapOptions}>
+            <Map mapContainerStyle={{ width: '100%', height: '100%' }} options={mapOptions} mapTypeId={mapTypeId}>
               {Object.entries(weatherData).map(([key, data]) => (
                 <AdvancedMarker
                   className={style.marker}
@@ -62,7 +76,7 @@ export default function OverviewMaps() {
           </div>
         </APIProvider>
         <div className={style.bottom}>
-          <PageBox className={style.Left}/>
+          <PageBox className={style.Left} toggleMapType={toggleMapType}/>
           <Dock className={style.dock}/>
           <Datetimebar className={style.Right}/>
         </div>

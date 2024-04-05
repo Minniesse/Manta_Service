@@ -3,9 +3,11 @@ import style from './namebar.module.css';
 import { useLocation } from 'react-router-dom';
 import { motion } from "framer-motion";
 
-function PageBox () {
+function PageBox ({ toggleMapType }) {
   const location = useLocation();
   const [isTabVisible, setIsTabVisible] = useState(false);
+  
+  
 
   let content;
   if (location.pathname === '/') {
@@ -67,9 +69,9 @@ function PageBox () {
       >
         <motion.div className={style.title} variants={item}>Choose the Appearance</motion.div>
         <div className={style.itemsContainer}>
-          <motion.div className={style.item1} variants={item}>
+          <motion.div className={style.item1} variants={item} onClick={() => toggleMapType('satellite')}>
             <img src="/src/assets/tempIcon.svg" alt="Icon" />
-            <span>Satelite</span>
+            <span>Satellite</span>
           </motion.div>
           <motion.div className={style.item2} variants={item}>
             <img src="/src/assets/tempIcon.svg" alt="Icon" />
