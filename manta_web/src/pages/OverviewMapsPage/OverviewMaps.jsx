@@ -11,14 +11,14 @@ import Traffic from '../../components/Trafficdata/TrafficMap';
 export default function OverviewMaps() {
 
   const [mapTypeId, setMapTypeId] = useState('roadmap');
+  const [showTraffic, setShowTraffic] = useState(false);
   const toggleMapType = (type) => {
-    setMapTypeId(prevMapTypeId => {
-      if (type === prevMapTypeId) {
-        return 'roadmap';
-      } else {
-        return type;
-      }
-    });
+    if (type === 'Traffic') {
+      setShowTraffic(prevShowTraffic => !prevShowTraffic);
+    } else {
+      setShowTraffic(false);
+      setMapTypeId(prevMapTypeId => type === prevMapTypeId ? 'roadmap' : type);
+    }
   };
   
 
@@ -28,7 +28,9 @@ export default function OverviewMaps() {
         <APIProvider apiKey="">
           <div className={style.top}>
           {/* <Satelliteview mapTypeId={mapTypeId} /> */}
-          <Traffic />
+          {/* <Traffic /> */}
+          {!showTraffic && <Satelliteview mapTypeId={mapTypeId} />}
+          {showTraffic && <Traffic />}
           </div>
         </APIProvider>
         <div className={style.bottom}>

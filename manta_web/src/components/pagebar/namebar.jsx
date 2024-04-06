@@ -77,7 +77,7 @@ function PageBox ({ toggleMapType }) {
             <img src="/src/assets/tempIcon.svg" alt="Icon" />
             <span>Heatmap</span>
           </motion.div>
-          <motion.div className={style.item3} variants={item}>
+          <motion.div className={style.item3} variants={item} onClick={() => toggleMapType('Traffic')}>
             <img src="/src/assets/tempIcon.svg" alt="Icon" />
             <span>Traffic</span>
           </motion.div>
