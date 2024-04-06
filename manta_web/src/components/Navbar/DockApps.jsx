@@ -39,7 +39,7 @@ function AppIcon({ mouseX, icon }) {
     controls.start({
       y: [0, -30, 0, -5, 0],
       transition: {
-        duration: 0.7,
+        duration: 0.8,
         ease: "easeOut",
       },
     });
@@ -49,7 +49,9 @@ function AppIcon({ mouseX, icon }) {
   return (
     <motion.div
       ref={ref}
-      style={{ width: width, aspectRatio: "1/1", borderRadius: "50%" }}
+      style={{ 
+        width: width, 
+      }}
       onClick={handleClick}
       animate={controls}
     >

@@ -42,16 +42,28 @@
 }
 
 .bottom {
-  grid-area: dock;
-  /* background: rgba(255, 255, 255, 0.20); */
-  /* box-shadow: 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px 3.399px 3.611px 0px rgba(0, 0, 0, 0.06); */
-  /* backdrop-filter: blur(17.899999618530273px); */
-  /* height: 20vh; */
-  /* make the dock take up the entire width of the screen */
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-areas: "page nav time";
   z-index: 100;
   width: 100%;
-  justify-content: center;
-  align-items: center;
   padding-bottom: 25px;
+  justify-items: stretch;
+  align-items: center;
+}
+
+.dock {
+  grid-area: nav;
+  width: 20px;
+}
+
+.Left {
+  grid-area: page;
+  display: flex;
+}
+
+.Right {
+  grid-area: time;
+  display: flex;
+  justify-content: flex-end;
 }

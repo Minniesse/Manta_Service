@@ -2,6 +2,7 @@ import style from './OverviewMaps.module.css';
 import React, { useRef } from 'react';
 import { APIProvider, Map, AdvancedMarker, InfoWindow } from "@vis.gl/react-google-maps";
 import Dock from '../../components/Navbar/DockApps';
+import PageBox from '../../components/pagebar/namebar';
 
 export default function OverviewMaps() {
   //set the Map data UI and location
@@ -60,7 +61,9 @@ export default function OverviewMaps() {
           </div>
         </APIProvider>
         <div className={style.bottom}>
-          <Dock className={style.Dock}/>
+          <PageBox className={style.Left}/>
+          <Dock className={style.dock}/>
+          <h1 className={style.Right}>Right</h1>
         </div>
       </div>
     </>
