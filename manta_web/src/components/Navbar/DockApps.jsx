@@ -1,5 +1,10 @@
 import React, { useRef } from "react";
-import { MotionValue, motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { MotionValue, motion, useMotionValue, useSpring, useTransform, useAnimation } from "framer-motion";
+import style from "./DockApps.module.css";
+import icon1 from "../../assets/Maps.svg";
+import icon2 from "../../assets/Settings.svg";
+import icon3 from "../../assets/Find_my.svg";
+import icon4 from "../../assets/Facetime.svg";
 
 function Dock() {
   let mouseX = useMotionValue(Infinity);
@@ -8,48 +13,48 @@ function Dock() {
     <motion.div
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
-      style={{
-        margin: "0 auto",
-        display: "flex",
-        height: "50px", // Increased height
-        alignItems: "flex-end",
-        gap: "24px", // Increased gap
-        borderRadius: "16px",
-        backgroundColor: "#4B5563",
-        padding: "24px", // Increased padding
-        paddingBottom: "18px", // Adjusted paddingBottom for visual balance
-        width: "fit-content", 
-      }}
+      className={style.Dock}
     >
-      {[...Array(4).keys()].map((i) => (
-        <AppIcon mouseX={mouseX} key={i} />
-      ))}
+      <AppIcon mouseX={mouseX} icon={icon1} />
+      <AppIcon mouseX={mouseX} icon={icon2} />
+      <AppIcon mouseX={mouseX} icon={icon3} />
+      <AppIcon mouseX={mouseX} icon={icon4} />
     </motion.div>
   );
 }
 
-function AppIcon({ mouseX }) {
+function AppIcon({ mouseX, icon }) {
   let ref = useRef(null);
+  const controls = useAnimation();
 
   let distance = useTransform(mouseX, (val) => {
     let bounds = ref.current ? ref.current.getBoundingClientRect() : { x: 0, width: 0 };
-
     return val - bounds.x - bounds.width / 2;
   });
 
-  let widthSync = useTransform(distance, [-150, 0, 150], [60, 120, 60]); // Adjusted sizes
+  let widthSync = useTransform(distance, [-150, 0, 150], [60, 120, 60]);
   let width = useSpring(widthSync, { mass: 0.3, stiffness: 200, damping: 12 });
+
+  const handleClick = () => {
+    controls.start({
+      y: [0, -30, 0, -5, 0],
+      transition: {
+        duration: 0.7,
+        ease: "easeOut",
+      },
+    });
+  };
+  
 
   return (
     <motion.div
       ref={ref}
-      style={{
-        width: width,
-        aspectRatio: "1/1",
-        borderRadius: "50%",
-        backgroundColor: "#9CA3AF",
-      }}
-    />
+      style={{ width: width, aspectRatio: "1/1", borderRadius: "50%" }}
+      onClick={handleClick}
+      animate={controls}
+    >
+      <img src={icon} alt="icon" style={{ width: "100%", height: "100%", display: "flex" }} />
+    </motion.div>
   );
 }
 
