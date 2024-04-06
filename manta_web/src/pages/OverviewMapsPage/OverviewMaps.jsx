@@ -60,7 +60,7 @@ export default function OverviewMaps() {
           </div>
         </APIProvider>
         <div className={style.bottom}>
-          <Dock />
+          <Dock className={style.Dock}/>
         </div>
       </div>
     </>
