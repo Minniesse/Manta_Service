@@ -1,9 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
+import ReactDOM from 'react-dom';
 import { Loader } from '@googlemaps/js-api-loader';
+
+const InfoComponent = ({ info }) => (
+  <div style={{ padding: '10px', color: "#000000" }}>
+    <h2>Camera Info</h2>
+    <p>{info}</p>
+  </div>
+);
 
 const Traffic = () => {
   const googleMapRef = useRef(null);
-  const [markers, setMarkers] = useState([]);
+  const infoWindowRef = useRef(null);
 
   useEffect(() => {
     const loader = new Loader({
@@ -22,31 +30,40 @@ const Traffic = () => {
       trafficLayer.setMap(map);
 
       const dummyData = [
-        { lat: 34.04924594193164, lng: -118.24104309082031 },
-        { lat: 34.05924594193165, lng: -118.25104309082032 },
-        { lat: 34.06924594193166, lng: -118.26104309082033 },
-        { lat: 34.07924594193167, lng: -118.27104309082034 },
+        { lat: 34.04924594193164, lng: -118.24104309082031, info: 'This is camera 1' },
       ];
 
-      const cctvIcon ="src/assets/cctvMapIcon.svg"
+      const cctvIcon = "src/assets/cctvMapIcon.svg";
 
-      const newMarkers = dummyData.map(data => new google.maps.Marker({
-        position: data,
-        map: map,
-        icon: cctvIcon,
-      }));
+      dummyData.forEach(data => {
+        const marker = new google.maps.Marker({
+          position: data,
+          map: map,
+          icon: cctvIcon,
+        });
 
-      setMarkers(newMarkers);
-    });
-  }, []);
+        marker.addListener('mouseover', () => {
+          if (infoWindowRef.current) {
+            infoWindowRef.current.close();
+          }
+          const infoWindowContent = document.createElement('div');
+          ReactDOM.render(<InfoComponent info={data.info} />, infoWindowContent);
 
-  useEffect(() => {
-    markers.forEach(marker => {
-      marker.addListener('click', () => {
-        console.log('Marker was clicked!');
+          infoWindowRef.current = new google.maps.InfoWindow({
+            content: infoWindowContent
+          });
+
+          infoWindowRef.current.open(map, marker);
+        });
+
+        marker.addListener('mouseout', () => {
+          if (infoWindowRef.current) {
+            infoWindowRef.current.close();
+          }
+        });
       });
     });
-  }, [markers]);
+  }, []);
 
   return <div ref={googleMapRef} style={{ width: '100%', height: '100%' }} />;
 };
