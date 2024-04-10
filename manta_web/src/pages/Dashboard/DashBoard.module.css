@@ -1,0 +1,147 @@
+*:focus {
+    outline: none;
+  }
+  
+  :root {
+    font-family: Inter;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #F4F1ED;
+    background-image: url(/src/assets/gobo_lights_bg.svg);
+    background-size: 100%;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+  }
+  
+  .entire{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.2fr;
+    grid-template-areas: "viewer" "dock";
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    outline: none;
+  }
+  
+  .top {
+    display: grid;
+    grid-area: "viewer";
+    overflow: hidden;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.20);
+    box-shadow: 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px 3.399px 3.611px 0px rgba(0, 0, 0, 0.06), 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px 3.399px 3.611px 0px rgba(0, 0, 0, 0.06), 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px 3.399px 3.611px 0px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(17.899999618530273px);
+    height: 83vh;
+    grid-template-rows: 60px auto auto;
+    grid-template-areas: "name" "layer1" "layer2";
+  
+  }
+   
+  .name{
+    grid-area: "name";
+    background-color: #F4F1ED;
+    color: black;
+    font-size: 40px;
+  }
+
+
+.layer1 {
+    display: grid;
+    grid-area: "layer1";
+    background-color: #b47a2e;
+    color: black;
+    grid-template-columns: 0.4fr 0.2fr auto; 
+    grid-template-areas: "graph1 graph2 graph3"; 
+}
+
+.graph1 {
+    grid-area: graph1;
+    background-color: rgb(0, 0, 255);
+    border-radius: 15px;
+    margin: 15px;
+}
+
+.graph2 {
+    grid-area: graph2;
+    background-color: rgb(255, 0, 0);
+    border-radius: 15px;
+    margin: 15px;
+
+  }
+
+.graph3 {
+    grid-area: graph3;
+    background-color: blue;
+    border-radius: 15px;
+    margin: 15px;
+}
+
+
+
+
+  .layer2{
+    display: grid;
+    grid-area: "layer2";
+    background-color: #b47a2e;
+    color: black;
+    grid-template-columns: 0.4fr 0.2fr auto; 
+    grid-template-areas: "graph4 graph5 graph6"; 
+  }
+  .graph4 {
+    grid-area: graph3;
+    background-color: blue;
+    border-radius: 15px;
+    margin: 15px;
+}
+
+.graph5 {
+  grid-area: graph3;
+  background-color: blue;
+  border-radius: 15px;
+  margin: 15px;
+}
+
+.graph6 {
+  grid-area: graph3;
+  background-color: blue;
+  border-radius: 15px;
+  margin: 15px;
+}
+
+
+
+  .bottom {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas: "page nav time";
+    z-index: 100;
+    width: 100%;
+    padding-bottom: 25px;
+    justify-items: stretch;
+    align-items: center;
+  }
+  
+  .dock {
+    grid-area: nav;
+    width: 100%;
+  }
+  
+  .Left {
+    grid-area: page;
+    width: 100%;
+  }
+  
+  .Right {
+    grid-area: time;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
