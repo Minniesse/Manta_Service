@@ -3,6 +3,7 @@ import './App.css';
 import OverviewMaps from "../src/pages/OverviewMapsPage/OverviewMaps";
 import Landing from "../src/pages/LandingPage/Landing";
 import Dashboard from "../src/pages/Dashboard/DashBoard";
+import Camconfig from '../src/pages/CCTVConfig/Camconfig';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/OverviewMaps" element={<OverviewMaps />} />
         <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/CCTVConfig" element={<Camconfig />} />
       </Routes>
     </BrowserRouter>
   );

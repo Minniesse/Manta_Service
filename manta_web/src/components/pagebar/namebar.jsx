@@ -14,6 +14,9 @@ function PageBox ({ toggleMapType }) {
     content = 'Home';
   } else if (location.pathname === '/OverviewMaps') {
     content = 'CCTV Maps';
+  }
+  else if (location.pathname === '/CCTVConfig') {
+    content = 'CCTV Config';
   } else {
     content = 'Page';
   }

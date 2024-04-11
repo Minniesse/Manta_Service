@@ -6,7 +6,7 @@ import style from './TrafficMap.module.css';
 //set style of the info component
 const InfoComponent = ({ info }) => (
   <div className={style.infocomponent}>
-    <h2 className={style.streamcctv}>Camera Info</h2> //RTSP camera
+    <h2 className={style.streamcctv}>Camera Info</h2>
     {/* <p>{info}</p> */}
     <div className={style.buttonall}>
       <div className={style.firstbutton}>Edit Camera</div>
