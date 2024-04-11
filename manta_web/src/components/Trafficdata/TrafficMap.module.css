@@ -1,0 +1,52 @@
+.infocomponent {
+  display: fixed;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  color: black;
+}
+
+.streamcctv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  border-radius: 10px;
+  width: 45vh;
+  height: 25vh;
+}
+
+.buttonall {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin-top: -10px;
+}
+
+.firstbutton {
+    display: flex;
+    width: 110px;
+    height: 32px;
+    border-radius: 6px;
+    background: var(--Core-White, black);
+    color: white;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.secondbutton {
+    display: flex;
+    width: 110px;
+    height: 32px;
+    border-radius: 6px;
+    background: var(--Core-White, black);
+    color: white;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

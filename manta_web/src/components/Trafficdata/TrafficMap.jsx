@@ -1,11 +1,17 @@
 import React, { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { Loader } from '@googlemaps/js-api-loader';
+import style from './TrafficMap.module.css';
 
+//set style of the info component
 const InfoComponent = ({ info }) => (
-  <div style={{ padding: '10px', color: "#000000" }}>
-    <h2>Camera Info</h2>
-    <p>{info}</p>
+  <div className={style.infocomponent}>
+    <h2 className={style.streamcctv}>Camera Info</h2> //RTSP camera
+    {/* <p>{info}</p> */}
+    <div className={style.buttonall}>
+      <div className={style.firstbutton}>Edit Camera</div>
+      <div className={style.secondbutton}>View Camera</div>
+    </div>
   </div>
 );
 
@@ -31,6 +37,7 @@ const Traffic = () => {
 
       const dummyData = [
         { lat: 34.04924594193164, lng: -118.24104309082031, info: 'This is camera 1' },
+        { lat: 34.04924594193164, lng: -118.25104309082031, info: 'This is camera 2' },
       ];
 
       const cctvIcon = "src/assets/cctvMapIcon.svg";
@@ -50,17 +57,17 @@ const Traffic = () => {
           ReactDOM.render(<InfoComponent info={data.info} />, infoWindowContent);
 
           infoWindowRef.current = new google.maps.InfoWindow({
-            content: infoWindowContent
+            content: infoWindowContent,
           });
 
           infoWindowRef.current.open(map, marker);
         });
 
-        marker.addListener('mouseout', () => {
-          if (infoWindowRef.current) {
-            infoWindowRef.current.close();
-          }
-        });
+        // marker.addListener('mouseout', () => {
+        //   if (infoWindowRef.current) {
+        //     infoWindowRef.current.close();
+        //   }
+        // });
       });
     });
   }, []);
