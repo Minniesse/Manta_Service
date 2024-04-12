@@ -4,7 +4,7 @@
         "id": 40,
         "model": "Model-X40",
         "status": "inactive",
-        "camera_he": "helloworld"
+        "tags": ["Sukhumvit Road", "Intersection"]
       },
       {
         "id": 41,

@@ -1,3 +1,70 @@
 .details{
     color: black;
+    margin-top: 30px;
+}
+
+.cctvname{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+
+.cctvicon{
+    width: 6px;
+    height: 51px;
+    border-radius: 17px;
+    background: #0554FA;
+}
+
+.cctvnamebox{
+    gap: 10px;
+}
+
+.blockElement {
+    display: block;
+    color: #000;
+    font-family: Inter;
+    font-size: 21.654px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 91.977%; /* 19.917px */
+    letter-spacing: -1.083px;
+}
+
+.tags{
+    display: inline-flex;
+    height: 20.753px;
+    align-items: center;
+    gap: 2.965px;
+    padding: 2.965px 5.929px 2.965px 4.447px;
+    border-radius: 741.177px;
+    background: linear-gradient(0deg, var(--Core-Hues-Amber-100, #FEF3C7) 0%, var(--Core-Hues-Amber-100, #FEF3C7) 100%), var(--Interactive-Positive-Light, #DCFCE7);
+    margin-top: 5px;
+}
+
+.cctvinfo{
+    display: grid;
+    grid-template-columns: 1fr 0.4fr;
+    grid-template-areas: "left right";
+    padding-top: 12px;
+}
+
+.left{
+    grid-area: left;
+    padding: 18px 0px 0px 20px;
+    border-radius: 10px;
+    background: #FDF9F4;
+}
+
+.cctvstreamingvideo{
+    width: 80%;
+}
+
+.cctvinfocontentleft{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 18px 0px 0px;
 }
