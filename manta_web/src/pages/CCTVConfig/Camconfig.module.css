@@ -122,21 +122,24 @@
     margin-top: 10px;
     overflow: scroll;
     overflow-x: hidden;
+    gap: 10px;
 }
 
-/* Style the scrollbar itself (the whole track) */
+.menuItemSelected {
+    color: white;
+}
+
+
 ::-webkit-scrollbar {
-    width: 5px;  /* Vertical scrollbar width */
+    width: 5px;
 }
 
-/* Style the handle (thumb) of the scrollbar */
 ::-webkit-scrollbar-thumb {
-    background-color: #eee5db; /* Color of the thumb */
-    border-radius: 10px; /* Rounded corners of the thumb */
+    background-color: #eee5db;
+    border-radius: 10px;
 }
 
-/* Style the track (part the thumb slides within) */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Color of the track */
-    border-radius: 10px; /* Rounded corners of the track */
+    background: #f1f1f1;
+    border-radius: 10px;
 }

@@ -36,14 +36,14 @@ export default function Camconfig() {
                     icon: <img src={overviewicon} alt="Overview" className={style.icon}/>,
                     label: 'Overview',
                     children: cameras.cameras.map((camera, index) => ({
-                        key: `${index + 5}`, // start keys at 5
+                        key: `${index + 5}`,
                         label: `${camera.model} (${camera.status})`,
                         className: style.menuItemSelected,
                       })),
                     },
                     {
                         key: 'sub3',
-                        icon: <SettingOutlined />, // Assuming you are using the SettingOutlined icon
+                        icon: <SettingOutlined />,
                         label: 'Navigation Three',
                         children: [
                           { key: '7', label: 'Option 7', className: style.menuItemSelected },
