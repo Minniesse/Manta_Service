@@ -1,0 +1,161 @@
+{
+    "cameras": [
+      {
+        "id": 40,
+        "model": "Model-X40",
+        "status": "inactive",
+        "camera_he": "helloworld"
+      },
+      {
+        "id": 41,
+        "model": "Model-X41",
+        "status": "active"
+      },
+      {
+        "id": 42,
+        "model": "Model-X42",
+        "status": "inactive"
+      },
+      {
+        "id": 43,
+        "model": "Model-X43",
+        "status": "inactive"
+      },
+      {
+        "id": 44,
+        "model": "Model-X44",
+        "status": "active"
+      },
+      {
+        "id": 45,
+        "model": "Model-X45",
+        "status": "active"
+      },
+      {
+        "id": 46,
+        "model": "Model-X46",
+        "status": "active"
+      },
+      {
+        "id": 47,
+        "model": "Model-X47",
+        "status": "active"
+      },
+      {
+        "id": 48,
+        "model": "Model-X48",
+        "status": "active"
+      },
+      {
+        "id": 49,
+        "model": "Model-X49",
+        "status": "inactive"
+      },
+      {
+        "id": 50,
+        "model": "Model-X50",
+        "status": "inactive"
+      },
+      {
+        "id": 51,
+        "model": "Model-X50",
+        "status": "inactive"
+      },
+      {
+        "id": 52,
+        "model": "Model-X50",
+        "status": "inactive"
+      },
+      {
+        "id": 53,
+        "model": "Model-X50",
+        "status": "inactive"
+      },
+      {
+        "id": 54,
+        "model": "Model-X50",
+        "status": "inactive"
+      },
+      {
+        "id": 55,
+        "model": "Model-X50",
+        "status": "inactive"
+      },
+      {
+        "id": 56,
+        "model": "Model-X50",
+        "status": "inactive"
+      },
+      {
+        "id": 57,
+        "model": "Model-X50",
+        "status": "inactive"
+      },
+      {
+        "id": 58,
+        "model": "Model-X50",
+        "status": "inactive"
+      },
+      {
+        "id": 59,
+        "model": "Model-X50",
+        "status": "inactive"
+      },
+      {
+        "id": 60,
+        "model": "Model-X50",
+        "status": "inactive"
+      },
+      {
+        "id": 61,
+        "model": "Model-X50",
+        "status": "inactive"
+      },
+      {
+        "id": 62,
+        "model": "Model-X50",
+        "status": "inactive"
+      },
+      {
+        "id": 63,
+        "model": "Model-X50",
+        "status": "inactive"
+      },
+      {
+        "id": 64,
+        "model": "Model-X50",
+        "status": "inactive"
+      },
+      {
+        "id": 65,
+        "model": "Model-X50",
+        "status": "inactive"
+      },
+      {
+        "id": 66,
+        "model": "Model-X50",
+        "status": "inactive"
+      },
+      {
+        "id": 67,
+        "model": "Model-X50",
+        "status": "inactive"
+      },
+      {
+        "id": 68,
+        "model": "Model-X50",
+        "status": "inactive"
+      },
+      {
+        "id": 69,
+        "model": "Model-X50",
+        "status": "inactive"
+      },
+      {
+        "id": 70,
+        "model": "Model-X50",
+        "status": "inactive"
+      }
+    ]
+  }
+  

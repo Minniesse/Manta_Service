@@ -6,18 +6,10 @@ import Datetimebar from '../../components/datebar/datetimebar';
 import React, { useState } from 'react';
 import { SettingOutlined } from '@ant-design/icons';
 import { Menu, Layout } from 'antd';
-import cameras from './dummydata.json';
+import cameras from '../../data/dummydata.json';
 import overviewicon from '../../assets/Overview.svg';
-
-const CameraDetails = ({ camera }) => {
-  return (
-    <div className={style.details}>
-      <h2>{camera.model}</h2>
-      <p>Status: {camera.status}</p>
-      <p>IP: {camera.camera_he}</p>
-    </div>
-  );
-};
+import Menulist from '../../components/Menu/Menulist';
+import CameraDetails from '../../components/CCTVDetails/CameraDetails';
 
 export default function Camconfig() {
   const [cameraDetails, setCameraDetails] = useState(null);
@@ -29,8 +21,6 @@ export default function Camconfig() {
     setCameraDetails(selectedCamera);
   };
 
-  const { Header, Sider } = Layout;
-
   return (
     <>
       <div className={style_def.entire}>
@@ -39,35 +29,7 @@ export default function Camconfig() {
             <div className={style.topbar}>
               <img src="/src/assets/Config_logo.svg" alt="Logo" className={style.logo} />
             </div>
-            <Menu
-              onClick={onClick}
-              defaultSelectedKeys={['1']}
-              defaultOpenKeys={['sub1']}
-              mode="inline"
-              className={style.menu}
-              items={[
-                {
-                  key: 'sub1',
-                  icon: <img src={overviewicon} alt="Overview" className={style.icon} />,
-                  label: 'Overview',
-                  children: cameras.cameras.map((camera, index) => ({
-                    key: `${index}`,
-                    label: `${camera.model} (${camera.status})`,
-                    className: style.menuItemSelected,
-                  })),
-                },
-                {
-                  key: 'sub3',
-                  icon: <SettingOutlined />,
-                  label: 'Navigation Three',
-                  children: [
-                    { key: '7', label: 'Option 7', className: style.menuItemSelected },
-                    { key: '8', label: 'Option 8', className: style.menuItemSelected },
-                    { key: '9', label: 'Option 9', className: style.menuItemSelected },
-                  ],
-                },
-              ]}
-            />
+            <Menulist cameras={cameras} onClick={onClick} />
           </Layout>
           {cameraDetails && (
             <div className={style.details}>
