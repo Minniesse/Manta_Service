@@ -5,9 +5,11 @@ import icon1 from "../../assets/Maps.svg";
 import icon2 from "../../assets/Settings.svg";
 import icon3 from "../../assets/Find_my.svg";
 import icon4 from "../../assets/Facetime.svg";
+import { useNavigate } from "react-router-dom";
 
 function Dock() {
   let mouseX = useMotionValue(Infinity);
+  let navigate = useNavigate();
 
   return (
     <motion.div
@@ -15,15 +17,15 @@ function Dock() {
       onMouseLeave={() => mouseX.set(Infinity)}
       className={style.Dock}
     >
-      <AppIcon mouseX={mouseX} icon={icon1} />
-      <AppIcon mouseX={mouseX} icon={icon2} />
+      <AppIcon mouseX={mouseX} icon={icon1} navigate={navigate} route="/OverviewMaps"/>
+      <AppIcon mouseX={mouseX} icon={icon2} navigate={navigate} route="/CCTVConfig" />
       <AppIcon mouseX={mouseX} icon={icon3} />
       <AppIcon mouseX={mouseX} icon={icon4} />
     </motion.div>
   );
 }
 
-function AppIcon({ mouseX, icon }) {
+function AppIcon({ mouseX, icon, navigate, route = "" }) {
   let ref = useRef(null);
   const controls = useAnimation();
 
@@ -36,6 +38,7 @@ function AppIcon({ mouseX, icon }) {
   let width = useSpring(widthSync, { mass: 0.3, stiffness: 200, damping: 12 });
 
   const handleClick = () => {
+    if (route) navigate(route);
     controls.start({
       y: [0, -30, 0, -5, 0],
       transition: {
@@ -44,14 +47,11 @@ function AppIcon({ mouseX, icon }) {
       },
     });
   };
-  
 
   return (
     <motion.div
       ref={ref}
-      style={{ 
-        width: width, 
-      }}
+      style={{ width: width }}
       onClick={handleClick}
       animate={controls}
     >
