@@ -14,15 +14,15 @@
 
 .bar{
     grid-area: "bar";
-    justify-content: center;
-    justify-items: center;
     padding-top: 30px;
+    background-color: #F4F1ED;
     }
 
 .topbar{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: -10px;
 }
 
 .logo{
@@ -108,4 +108,35 @@
 .camtag:hover{
     border-radius: 10px;
     background: rgba(131, 131, 131, 0.20);
+}
+
+.menu{
+    padding-top: 10px;
+    background-color: #F4F1ED;
+    width: 80%;
+    height: 100%;
+    align-self: center;
+    color: #F4F1ED;
+    align-items: center;
+    justify-content: start;
+    margin-top: 10px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+/* Style the scrollbar itself (the whole track) */
+::-webkit-scrollbar {
+    width: 5px;  /* Vertical scrollbar width */
+}
+
+/* Style the handle (thumb) of the scrollbar */
+::-webkit-scrollbar-thumb {
+    background-color: #eee5db; /* Color of the thumb */
+    border-radius: 10px; /* Rounded corners of the thumb */
+}
+
+/* Style the track (part the thumb slides within) */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the track */
+    border-radius: 10px; /* Rounded corners of the track */
 }
