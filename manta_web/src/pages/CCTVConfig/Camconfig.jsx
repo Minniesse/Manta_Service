@@ -25,6 +25,10 @@ export default function Camconfig() {
                             <p>2</p>
                         </div>
                     </div>
+                    <div className={style.camtag}>
+                        <img src="/src/assets/camtags.svg" alt="Logo" className={style.plus}/>
+                        <p className={style.camtagtext}>Camera Tag</p>
+                    </div>
                 </div>
             </div>
         </div>

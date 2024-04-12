@@ -44,7 +44,7 @@
     color: black;
     align-items: center;
     justify-content: start;
-    width: 236px;
+    width: 245px;
     height: 40px;
     border-radius: 10px;
     /* background: rgba(131, 131, 131, 0.20);
@@ -85,4 +85,27 @@
     margin-left: 0px;
     color: white;
     font-size: 12.643px;
+}
+
+.camtag{
+    display: flex;
+    color: #989898;
+    align-items: center;
+    justify-content: start;
+    width: 245px;
+    height: 40px;
+    border-radius: 10px;
+    margin-top: 10px;
+    /* background: rgba(131, 131, 131, 0.20);
+    box-shadow: 2px 4px 4px -1px rgba(0, 0, 0, 0.25) inset, 0px -1px 1px 0px rgba(255, 255, 255, 0.35) inset; */
+}
+
+.camtag img{
+    padding-right: 10px;
+    padding-left: 25px;
+}
+
+.camtag:hover{
+    border-radius: 10px;
+    background: rgba(131, 131, 131, 0.20);
 }
