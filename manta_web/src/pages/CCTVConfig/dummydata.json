@@ -3,7 +3,8 @@
       {
         "id": 40,
         "model": "Model-X40",
-        "status": "inactive"
+        "status": "inactive",
+        "camera_he": "helloworld"
       },
       {
         "id": 41,
