@@ -19,17 +19,14 @@ const CameraDetails = ({ camera }) => {
             <div className={style.cctvinfo}>
                 <div className={style.left}>
                     <div className={style.cctvstreaming}>
-                        <img src={cctvstreamingdummy} alt="cctvstreaming" className={style.cctvstreamingvideo} />
+                        
                     </div>
                     <div className={style.cctvinfocontentleft}>
-                            <div className={style.temp}>
-                                <h2>Camera Info</h2>
+                            <div className={style.box1}>
+                                <p></p>
                             </div>
-                            <div className={style.temp}>
-                                <p>Camera IP: {camera.ip}</p>
-                            </div>
-                            <div className={style.temp}>
-                                <p>Camera Location: {camera.location}</p>
+                            <div className={style.box2}>
+                                <p></p>
                             </div>
                     </div>
                 </div>
