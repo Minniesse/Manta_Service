@@ -4,10 +4,11 @@ import { Menu } from 'antd';
 import style from '../../pages/CCTVConfig/Camconfig.module.css';
 import overviewicon from '../../assets/Overview.svg';
 
-const Menulist = ({ cameras, onClick }) => {
+const Menulist = ({ cameras, onClick, selectedKey }) => {
   return (
     <Menu
       onClick={onClick}
+      selectedKeys={[selectedKey]}
       defaultSelectedKeys={['1']}
       defaultOpenKeys={['sub1']}
       mode="inline"

@@ -16,6 +16,7 @@ function App() {
         <Route path="/OverviewMaps" element={<OverviewMaps />} />
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/CCTVConfig" element={<Camconfig />} />
+        <Route path="/CCTVConfig/:key" element={<Camconfig />} />
       </Routes>
     </BrowserRouter>
   );

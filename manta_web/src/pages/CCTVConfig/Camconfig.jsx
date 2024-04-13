@@ -3,22 +3,28 @@ import style_def from '../OverviewMapsPage/OverviewMaps.module.css';
 import Dock from '../../components/Navbar/DockApps';
 import PageBox from '../../components/pagebar/namebar';
 import Datetimebar from '../../components/datebar/datetimebar';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SettingOutlined } from '@ant-design/icons';
 import { Menu, Layout } from 'antd';
 import cameras from '../../data/dummydata.json';
 import overviewicon from '../../assets/Overview.svg';
 import Menulist from '../../components/Menu/Menulist';
 import CameraDetails from '../../components/CCTVDetails/CameraDetails';
+import { useParams, useNavigate } from 'react-router-dom';
 
 export default function Camconfig() {
   const [cameraDetails, setCameraDetails] = useState(null);
+  const { key } = useParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const selectedCamera = cameras.cameras.find((camera, index) => `${index}` === key);
+    setCameraDetails(selectedCamera);
+  }, [key]);
 
   const onClick = (e) => {
     console.log('click ', e);
-    window.history.pushState(null, null, `/CCTVConfig/${e.key}`);
-    const selectedCamera = cameras.cameras.find((camera, index) => `${index}` === e.key);
-    setCameraDetails(selectedCamera);
+    navigate(`/CCTVConfig/${e.key}`);
   };
 
   return (
@@ -29,7 +35,7 @@ export default function Camconfig() {
             <div className={style.topbar}>
               <img src="/src/assets/Config_logo.svg" alt="Logo" className={style.logo} />
             </div>
-            <Menulist cameras={cameras} onClick={onClick} />
+            <Menulist cameras={cameras} onClick={onClick} selectedKey={key}/>
           </Layout>
           {cameraDetails && (
             <div className={style.details}>

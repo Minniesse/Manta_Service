@@ -1,6 +1,7 @@
 .details{
     color: black;
     margin-top: 30px;
+    padding-right: 25px;
 }
 
 .cctvname{
@@ -60,30 +61,41 @@
 
 .cctvstreaming {
     width: 97.75%;
-    height: 45vh;
+    height: 47vh;
     background-color: rgba(226, 223, 223, 0.747);
     border-radius: 10px;
 }
 
 .cctvinfocontentleft{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 10px 18px 18px 0px;
     grid-template-columns: 1fr auto;
     grid-template-areas: "left right";
     gap: 10px;
 }
 
-.box1 {
-    display: flex;
+.box1{
     grid-area: left;
     width: 25vh;
     height: 20vh;
     border-radius: 11.962px;
     border: 1.196px solid #F0C5CC;
     background: #FAECEB;
-    justify-content: center;
+}
+
+.box1content {
+    display: flex;
+    padding-left: 10px;
+    margin-top: 10px;
+    align-items: center;
+    gap: 5px;
+    color: #DC484B;
+    font-family: Inter;
+    font-size: 14.746px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 91.977%; /* 15.403px */
+    letter-spacing: -0.5px;
 }
 
 .box2 {
@@ -95,4 +107,166 @@
     border: 1.196px solid rgba(0, 0, 0, 0.50);
     background: var(--Core-White, #FFF);
     justify-content: center;
+}
+
+.right{
+    grid-area: right;
+    border-radius: 0px 10px 10px 0px;
+    background-color: #F2F2F7;
+    display: flex;
+    flex-direction: column;
+}
+
+.Maps{
+    padding: 10px 20px 0px 20px;
+    font-size: 19px;
+}
+
+.mapvisualize{
+    width: 100%;
+    height: 20vh;
+    border-radius: 10px;
+    background-color: #EEE8E1;
+    margin-top: -10px;
+    border-radius: 4.976px;
+    box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.40) inset;
+}
+
+.mapbutton{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--Light-White-T4, rgba(66, 47, 138, 0.87));
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+  
+.toggleButton {
+    width: 50px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 80px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: #545454;
+    font-family: Inter;
+    font-size: 17.143px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 91.977%; /* 15.768px */
+    letter-spacing: -0.857px;
+}
+
+.toggleButton.enabled {
+    background-color: var(--M3-sys-light-primary, #6750A4);;
+}
+
+.toggleThumb {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+.toggleButton.enabled .toggleThumb {
+    transform: translateX(26px);
+}
+
+.camtoggle{
+    display: flex;
+    gap: 10px;
+    padding: 10px 20px 0px 20px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 19px;
+}
+
+.functions{
+    display: flex;
+    margin-top: 15px;
+    /* padding: 10px 20px 0px 20px; */
+    flex-direction: column;
+    align-self: center;
+    width: 90%;
+    border-radius: 10px;
+    background: var(--Core-White, #FFF);
+    box-shadow: 2px 4px 4px -1px rgba(0, 0, 0, 0.25) inset, 0px -1px 1px 0px rgba(255, 255, 255, 0.35) inset;
+}
+
+.functionitem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #000000;
+    padding: 6px 10px 6px 10px;
+    color: #000;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 91.977%; /* 14.716px */
+    letter-spacing: -1.12px;
+}
+
+.functionitem:last-child{
+    margin-top: -2px;
+    border-bottom: none;
+}
+
+.additionalfunctitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 20px 0px 20px;
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 91.977%;
+    letter-spacing: -1.12px;
+}
+
+.additionalfunc{
+    display: flex;
+    margin-top: 15px;
+    /* padding: 10px 20px 0px 20px; */
+    flex-direction: column;
+    align-self: center;
+    width: 90%;
+    height: 10vh;
+    border-radius: 10px;
+    background: var(--Core-White, #FFF);
+    box-shadow: 2px 4px 4px -1px rgba(0, 0, 0, 0.25) inset, 0px -1px 1px 0px rgba(255, 255, 255, 0.35) inset;
+}
+
+.additionalfunc span{
+    padding-left: 10px;
+}
+
+.additionalfunc:last-child{
+    border-bottom: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.additionalfunctitle{
+    color: #848484;
+    font-size: 19.143px;
+    letter-spacing: -0.5px;
+}
+
+.additionalfuncitem{
+    font-size: 19.143px;
+}
+
+.error{
+    width: 13%;
 }
