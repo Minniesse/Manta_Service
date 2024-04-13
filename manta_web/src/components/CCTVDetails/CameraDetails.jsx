@@ -28,7 +28,7 @@ const CameraDetails = ({ camera }) => {
             <div className={style.cctvinfo}>
                 <div className={style.left}>
                     <div className={style.cctvstreaming}></div>
-                    <div className={style.cctvinfocontentleft}>
+                    <div className={style.cctvinfocontent}>
                             <div className={style.box1}>
                                 <div className={style.box1content}>
                                     <img src={erroricon} className={style.error} />
@@ -42,7 +42,7 @@ const CameraDetails = ({ camera }) => {
                 </div>
                 <div className={style.right}>
                     <div className={style.Maps}>
-                        <p>CCTV Live Footage</p>
+                        <p>CCTV Location</p>
                         <div className={style.mapvisualize}></div>
                         <div className={style.mapbutton}>
                             <img src={analytics} alt="cctvstreamingdummy" />

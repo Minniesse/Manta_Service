@@ -54,21 +54,22 @@
 
 .left{
     grid-area: left;
-    padding: 18px 0px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 18px 18px 18px 20px;
     border-radius: 10px;
     background: #FDF9F4;
 }
 
 .cctvstreaming {
-    width: 97.75%;
     height: 47vh;
     background-color: rgba(226, 223, 223, 0.747);
     border-radius: 10px;
 }
 
-.cctvinfocontentleft{
+.cctvinfocontent{
     display: flex;
-    padding: 10px 18px 18px 0px;
+    padding: 10px 0px 18px 0px;
     grid-template-columns: 1fr auto;
     grid-template-areas: "left right";
     gap: 10px;
