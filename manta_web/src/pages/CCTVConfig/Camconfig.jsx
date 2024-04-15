@@ -9,7 +9,6 @@ import cameras from '../../data/dummydata.json';
 import Menulist from '../../components/Menu/Menulist';
 import CameraDetails from '../../components/CCTVDetails/CameraDetails';
 import { useParams, useNavigate } from 'react-router-dom';
-import addlogo from '../../assets/add_button.svg';
 
 export default function Camconfig() {
   const [cameraDetails, setCameraDetails] = useState(null);

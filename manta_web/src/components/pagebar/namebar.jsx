@@ -111,6 +111,9 @@ function PageBox ({ toggleMapType, setIsButtonClicked }) {
               initial="hidden"
               animate={isCCTVConfigTabVisible ? "visible" : "hidden"}
               style={{
+                position: 'absolute',
+                top: '35%',
+                right: '70%',
                 transform: 'translate(-50%, -50%)',
                 zIndex: 9999,
                 backgroundColor: 'white',
@@ -127,7 +130,8 @@ function PageBox ({ toggleMapType, setIsButtonClicked }) {
               }}
             >
               <motion.div className={style.title} variants={item}>
-                Add Camera
+                <label htmlFor="textInput">Add your new Camera</label>
+                <input type="text" id="textInput" />
               </motion.div>
             </motion.div>
           </>
