@@ -1,0 +1,24 @@
+p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 15px;
+    font-weight: 1000;
+}
+
+.trend{
+    border: 1px solid;
+    border-radius: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+#pos{
+    color:#03be2c;
+    background-color: #dcffe9;
+}
+
+#neg{
+    color:#EA1B1B;
+    background-color: #FFE8E8;
+}

@@ -41,6 +41,7 @@
     backdrop-filter: blur(17.899999618530273px);
     height: 83vh;
     grid-template-rows: 0.1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas: "name" "body";
   
   }
@@ -59,7 +60,7 @@
   .body{
     grid-area: "body";
     display: grid;
-    grid-template-columns: 0.6fr 1fr 0.6fr;
+    grid-template-columns: 0.6fr 1fr 0.65fr;
     grid-template-rows: 1fr;
     grid-template-areas: "body_left" "body_mid" "body_right";
     justify-content: center;
@@ -87,7 +88,14 @@
     margin-bottom: 1vh;
   }
 
-  .avg_velocity{
+  .BL_avg_data p{
+    font-family: "DM Sans";
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 0.25vh;
+  }
+
+  .BLA_velocity{
     grid-area: "avg_velocity";
     border-radius: 12px;
     justify-content: center;
@@ -98,7 +106,7 @@
     margin-right: 0.5vh;
   }
 
-  .avg_roadtime{
+  .BLA_roadtime{
     grid-area: "avg_velocity";
     border-radius: 12px;
     justify-content: center;
@@ -109,23 +117,16 @@
     margin-left: 0.5vh;
   }
 
-  .avg_icon{
+  .BLA_icon{
     width: 30px;
     height: 30px;
   }
 
-  .BL_avg_data{
-    font-family: "DM Sans";
-    font-size: 15px;
-    font-weight: 700;
-    margin-top: 0.25vh;
-  }
-
-  .avg_velocity p{
+  .BLA_velocity p{
     color: #fff;
   }
 
-  .avg_roadtime{
+  .BLA_roadtime p{
     color: #555;
   }
   .BL_other_data{
@@ -153,95 +154,195 @@
   }
   
   .BM_cam{
+    grid-area: "BM_cam";
     margin-bottom: 0.5vh;
     border-radius: 12px;
     background-color: #060606;
   }
 
   .BM_data{
+    grid-area: "BM_data";
+    display: grid;
+    grid-template-rows: 0.1fr 0.1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "BMD_header" "BMD_value" "BMD_graph";
     margin-top: 0.5vh;
-    border-radius: 11.009px;
+    border-radius: 20px;
     background-color: white;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    padding-top: 1vh;
   }
 
+  .BMD_header{
+    grid-area: "BMD_header";
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+    color: #060606;
+    font-weight: 700;
+    font-size: 20px;
+    gap: 5px;
+  }
 
+  .BMD_header button{
+    height: 3.5vh;
+    width: 3.5vh;
+    border-radius: 12px;
+    border-color: #E0E0E0;
+    border-style: solid;
+    margin-left: auto;
+    background-image: url(/src/assets/expand_icon.svg);
+    background-color: #FFF;
+    background-position: center;
+    background-size: 75%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin-bottom: 0px;
+    transition-timing-function: ease-in-out;  
+    transition-duration: 0.1s;
+  }
+
+  .BMD_header button:hover{
+    border-color: #8f8f8f;
+  }
+  
+  .BMD_value{
+    
+    grid-area: "BMD_value";
+    display: inline-flex;
+    align-items:baseline;
+    gap:10px
+  }
+
+  .BMD_value h2{
+    color: #060606;
+    font-size:2vw;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .BMD_value h3{
+    color: #878787;
+    font-size:1vw;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .BMD_graph{
+    grid-area: "BMD_graph";
+  }
 
   .body_right{
-    background-color: green;
-  }
-
-
-
-/*
-.layer1 {
+    grid-area: "body_right";
     display: grid;
-    grid-area: "layer1";
-    background-color: #b47a2e;
-    color: black;
-    grid-template-columns: 0.4fr 0.2fr auto; 
-    grid-template-areas: "graph1 graph2 graph3"; 
-}
-
-.graph1 {
-    grid-area: graph1;
-    background-color: rgb(0, 0, 255);
-    border-radius: 15px;
-    margin: 15px;
-}
-
-.graph2 {
-    grid-area: graph2;
-    background-color: rgb(255, 0, 0);
-    border-radius: 15px;
-    margin: 15px;
-
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "BR_map" "BR_data";
   }
 
-.graph3 {
-    grid-area: graph3;
-    background-color: blue;
-    border-radius: 15px;
-    margin: 15px;
-}
+  .BR_map{
+    grid-area: "BR_map";
+    background-color: #060606;
+    border-radius: 12px;
+    margin-bottom: 0.5vh;
+  }
 
-
-
-
-  .layer2{
+  .BR_data{
+    grid-area: "BR_data";
     display: grid;
-    grid-area: "layer2";
-    background-color: #b47a2e;
-    color: black;
-    grid-template-columns: 0.4fr 0.2fr auto; 
-    grid-template-areas: "graph4 graph5 graph6"; 
+    grid-template-rows: 0.1fr 0.1fr 0.1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "BRD_header" "BRD_value" "BRD_detail" "BRD_graph";
+    margin-top: 0.5vh;
+    border-radius: 20px;
+    background-color: white;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    padding-top: 1vh;
   }
-  .graph4 {
-    grid-area: graph3;
-    background-color: blue;
-    border-radius: 15px;
-    margin: 15px;
-}
+  .BRD_header{
+    grid-area: "BRD_header";
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+    color: #060606;
+    font-weight: 700;
+    font-size: 20px;
+    gap: 5px;
+  }
 
-.graph5 {
-  grid-area: graph3;
-  background-color: blue;
-  border-radius: 15px;
-  margin: 15px;
-}
+  .BRD_header button{
+    height: 3.5vh;
+    width: 3.5vh;
+    border-radius: 12px;
+    border-color: #E0E0E0;
+    border-style: solid;
+    margin-left: auto;
+    background-image: url(/src/assets/expand_icon.svg);
+    background-color: #FFF;
+    background-position: center;
+    background-size: 75%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition-timing-function: ease-in-out;  
+    transition-duration: 0.1s;
+  }
+  .BRD_header button:hover{
+    border-color: #8f8f8f;
+  }
 
-.graph6 {
-  grid-area: graph3;
-  background-color: blue;
-  border-radius: 15px;
-  margin: 15px;
-}
-*/
+  .BRD_detail{
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+  }
+
+  .BRD_header button:hover{
+    border-color: #8f8f8f;
+  }
+  
+  .BRD_value{
+    grid-area: "BRD_value";
+    display: inline-flex;
+    align-items:baseline;
+    gap:10px
+  }
+
+  .BRD_value h2{
+    color: #060606;
+    font-size:2vw;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .BRD_detail {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #878787;
+    font-weight: 700;
+    font-size: 1vw;
+    font-weight: 700;
+    gap: 5px
+  }
+
+  .BRD_legendL{
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: 5px;
+    gap: 5px;
+  }
+  .BRD_legendR{
+    margin-left: 0px;
+    display: inline-flex;
+    gap: 5px;
+  }
 
 
   .bottom {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    grid-template-areas: "page nav time";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "page" "nav" "time";
     z-index: 100;
     width: 100%;
     padding-bottom: 25px;
