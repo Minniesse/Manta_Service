@@ -130,7 +130,8 @@ function PageBox ({ toggleMapType, setIsButtonClicked }) {
               }}
             >
               <motion.div className={style.title} variants={item}>
-                Add Camera
+                <label htmlFor="textInput">Add your new Camera</label>
+                <input type="text" id="textInput" />
               </motion.div>
             </motion.div>
           </>
