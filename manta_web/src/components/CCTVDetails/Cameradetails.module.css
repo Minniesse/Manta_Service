@@ -10,6 +10,7 @@
     align-items: center;
     align-content: center;
     align-self: center;
+    justify-content: space-between;
 }
 
 .cctvicon{
@@ -270,4 +271,12 @@
 
 .error{
     width: 13%;
+}
+
+.nameleft{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    align-content: center;
+    align-self: center;
 }

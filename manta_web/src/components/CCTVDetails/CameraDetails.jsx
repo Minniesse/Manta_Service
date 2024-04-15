@@ -4,6 +4,7 @@ import cctvstreamingdummy from '../../assets/cctvstreamingdummy.svg';
 import analytics from '../../assets/analytics.svg';
 import checkicon from '../../assets/Check.svg';
 import erroricon from '../../assets/Error.svg';
+import editcctv from '../../assets/editcctv.svg';
 
 const CameraDetails = ({ camera }) => {
     const [isEnabled, setIsEnabled] = useState(false);
@@ -15,15 +16,18 @@ const CameraDetails = ({ camera }) => {
     return (
         <div className={style.details}>
             <div className={style.cctvname}>
-                <div className={style.cctvicon}></div>
-                <div className={style.cctvnamebox}>
-                    <div className={style.blockElement}>
-                        {camera.model}
-                    </div>
-                    <div className={style.tags}>
-                        {camera.status}
+                <div className={style.nameleft}>
+                    <div className={style.cctvicon}></div>
+                    <div className={style.cctvnamebox}>
+                        <div className={style.blockElement}>
+                            {camera.model}
+                        </div>
+                        <div className={style.tags}>
+                            {camera.status}
+                        </div>
                     </div>
                 </div>
+                <img src={editcctv} className={style.editbutton} />
             </div>
             <div className={style.cctvinfo}>
                 <div className={style.left}>
