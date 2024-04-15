@@ -4,18 +4,18 @@ import Dock from '../../components/Navbar/DockApps';
 import PageBox from '../../components/pagebar/namebar';
 import Datetimebar from '../../components/datebar/datetimebar';
 import React, { useState, useEffect } from 'react';
-import { SettingOutlined } from '@ant-design/icons';
-import { Menu, Layout } from 'antd';
+import { Layout } from 'antd';
 import cameras from '../../data/dummydata.json';
-import overviewicon from '../../assets/Overview.svg';
 import Menulist from '../../components/Menu/Menulist';
 import CameraDetails from '../../components/CCTVDetails/CameraDetails';
 import { useParams, useNavigate } from 'react-router-dom';
+import addlogo from '../../assets/add_button.svg';
 
 export default function Camconfig() {
   const [cameraDetails, setCameraDetails] = useState(null);
   const { key } = useParams();
   const navigate = useNavigate();
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
 
   useEffect(() => {
     const selectedCamera = cameras.cameras.find((camera, index) => `${index}` === key);
@@ -30,7 +30,7 @@ export default function Camconfig() {
   return (
     <>
       <div className={style_def.entire}>
-        <div className={style.top}>
+        <div className={`${style.top} ${isButtonClicked ? style.blurred : style.unblurred}`}>
           <Layout className={style.bar}>
             <div className={style.topbar}>
               <img src="/src/assets/Config_logo.svg" alt="Logo" className={style.logo} />
@@ -44,7 +44,7 @@ export default function Camconfig() {
           )}
         </div>
         <div className={style_def.bottom}>
-          <PageBox className={style.Left} />
+          <PageBox className={style.Left} setIsButtonClicked={setIsButtonClicked}/>
           <Dock className={style.dock} />
           <Datetimebar className={style.Right} />
         </div>

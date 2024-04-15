@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SettingOutlined } from '@ant-design/icons';
-import { Menu } from 'antd';
+import { Menu, Input } from 'antd';
 import style from '../../pages/CCTVConfig/Camconfig.module.css';
 import overviewicon from '../../assets/Overview.svg';
 
 const Menulist = ({ cameras, onClick, selectedKey }) => {
+  const [searchValue, setSearchValue] = useState('');
+
+  const filteredCameras = cameras.cameras.filter((camera) =>
+    camera.model.toLowerCase().includes(searchValue.toLowerCase())
+  );
+
   return (
     <Menu
       onClick={onClick}
@@ -13,29 +19,32 @@ const Menulist = ({ cameras, onClick, selectedKey }) => {
       defaultOpenKeys={['sub1']}
       mode="inline"
       className={style.menu}
-      items={[
-        {
-          key: 'sub1',
-          icon: <img src={overviewicon} alt="Overview" className={style.icon} />,
-          label: 'Overview',
-          children: cameras.cameras.map((camera, index) => ({
-            key: `${index}`,
-            label: `${camera.model} (${camera.status})`,
-            className: style.menuItemSelected,
-          })),
-        },
-        {
-          key: 'sub3',
-          icon: <SettingOutlined />,
-          label: 'Navigation Three',
-          children: [
-            { key: '7', label: 'Option 7', className: style.menuItemSelected },
-            { key: '8', label: 'Option 8', className: style.menuItemSelected },
-            { key: '9', label: 'Option 9', className: style.menuItemSelected },
-          ],
-        },
-      ]}
-    />
+    >
+      <Menu.Item key="search">
+        <Input.Search
+          placeholder="Search cameras"
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+          style={{
+            backgroundColor: '#E7F4FE',
+            borderRadius: '0rem',
+            padding: '0.5rem',
+            width: '100%',
+          }}
+        />
+      </Menu.Item>
+      <Menu.SubMenu
+        key="sub1"
+        icon={<img src={overviewicon} alt="Overview" className={style.icon} />}
+        title="Overview"
+      >
+        {filteredCameras.map((camera, index) => (
+          <Menu.Item key={`${index}`} className={style.menuItemSelected}>
+            {`${camera.model} (${camera.status})`}
+          </Menu.Item>
+        ))}
+      </Menu.SubMenu>
+    </Menu>
   );
 };
 

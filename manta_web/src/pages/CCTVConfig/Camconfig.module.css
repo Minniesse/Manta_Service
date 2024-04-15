@@ -3,7 +3,7 @@
     overflow: hidden;
     border-radius: 15px;
     background: rgba(255, 255, 255, 0.20);
-    box-shadow: 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px 3.399px 3.611px 0px rgba(0, 0, 0, 0.06), 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px 3.399px 3.611px 0px rgba(0, 0, 0, 0.06), 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px 3.399px 3.611px 0px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.22) inset, 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px 3.399px 3.611px 0px rgba(0, 0, 0, 0.06), 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px 3.399px 3.611px 0px rgba(0, 0, 0, 0.06), 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px 3.399px 3.611px 0px rgba(0, 0, 0, 0.06);
     backdrop-filter: blur(17.899999618530273px);
     height: 83vh;
     display: grid;
@@ -20,8 +20,8 @@
 
 .topbar{
     display: flex;
-    align-items: start;
-    justify-content: start;
+    align-items: center;
+    justify-content: flex-start;
     padding-left: 60px;
 }
 
@@ -154,3 +154,39 @@
 .details{
     grid-area: "details";
 }
+
+.blurred {
+    filter: blur(4px);
+    pointer-events: none;
+}
+
+@keyframes fadeBlur {
+    0% {
+      filter: blur(0);
+      opacity: 1;
+    }
+    100% {
+      filter: blur(4px);
+      opacity: 0.5;
+    }
+  }
+  
+  @keyframes fadeUnblur {
+    0% {
+      filter: blur(4px);
+      opacity: 0.5;
+    }
+    100% {
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+  
+  .blurred {
+    animation: fadeBlur 0.2s ease-in-out forwards;
+    pointer-events: none;
+  }
+  
+  .unblurred {
+    animation: fadeUnblur 0.2s ease-in-out forwards;
+  }
