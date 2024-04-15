@@ -40,19 +40,139 @@
     box-shadow: 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px 3.399px 3.611px 0px rgba(0, 0, 0, 0.06), 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px 3.399px 3.611px 0px rgba(0, 0, 0, 0.06), 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px 3.399px 3.611px 0px rgba(0, 0, 0, 0.06);
     backdrop-filter: blur(17.899999618530273px);
     height: 83vh;
-    grid-template-rows: 60px auto auto;
-    grid-template-areas: "name" "layer1" "layer2";
+    grid-template-rows: 0.1fr 1fr;
+    grid-template-areas: "name" "body";
   
   }
    
   .name{
     grid-area: "name";
-    background-color: #F4F1ED;
     color: black;
-    font-size: 40px;
+    font-size: 35px;
+    -webkit-text-stroke-width: 0.7241379022598267;
+    -webkit-text-stroke-color: #060606;
+    padding-top: 1.25vh;
+    padding-bottom: 4vh;
+    padding-left: 5vh;
+  }
+
+  .body{
+    grid-area: "body";
+    display: grid;
+    grid-template-columns: 0.6fr 1fr 0.6fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "body_left" "body_mid" "body_right";
+    justify-content: center;
+    height: 90%;
+    padding-left: 5vh;
+    padding-right: 5vh;
+  }
+
+  .body_left{
+    grid-area: "body_left";
+    display: grid;
+    grid-template-rows: 0.35fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "BL_avg_data" "BL_other_data";
+    justify-content: center;
+  }
+
+  .BL_avg_data{
+    grid-area: "BL_avg_data";
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-areas: "avg_velocity" "avg_roadtime";
+    justify-content: center;
+    margin-bottom: 1vh;
+  }
+
+  .avg_velocity{
+    grid-area: "avg_velocity";
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 1.5vh;
+    background: #D5E3BB;
+    margin-right: 0.5vh;
+  }
+
+  .avg_roadtime{
+    grid-area: "avg_velocity";
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 1.5vh;
+    background: #ffffff;
+    margin-left: 0.5vh;
+  }
+
+  .avg_icon{
+    width: 30px;
+    height: 30px;
+  }
+
+  .BL_avg_data{
+    font-family: "DM Sans";
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 0.25vh;
+  }
+
+  .avg_velocity p{
+    color: #fff;
+  }
+
+  .avg_roadtime{
+    color: #555;
+  }
+  .BL_other_data{
+    grid-area: "BL_other_data";
+    display: grid;
+    border-radius: 20px;
+	  align-items: center;
+    text-align: center;
+    background: var(--Core-White, #FFF);
+  }
+
+  .BL_other_data p{
+    color: #060606;
+    font-weight: 700;
+  }
+
+  .body_mid{
+    grid-area: "body_mid";
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "BM_cam" "BM_data";
+    margin-left: 1vh;
+    margin-right: 1vh;
+  }
+  
+  .BM_cam{
+    margin-bottom: 0.5vh;
+    border-radius: 12px;
+    background-color: #060606;
+  }
+
+  .BM_data{
+    margin-top: 0.5vh;
+    border-radius: 11.009px;
+    background-color: white;
   }
 
 
+
+  .body_right{
+    background-color: green;
+  }
+
+
+
+/*
 .layer1 {
     display: grid;
     grid-area: "layer1";
@@ -115,7 +235,7 @@
   border-radius: 15px;
   margin: 15px;
 }
-
+*/
 
 
   .bottom {
