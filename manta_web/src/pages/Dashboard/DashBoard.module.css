@@ -40,88 +40,309 @@
     box-shadow: 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px 3.399px 3.611px 0px rgba(0, 0, 0, 0.06), 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px 3.399px 3.611px 0px rgba(0, 0, 0, 0.06), 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px 3.399px 3.611px 0px rgba(0, 0, 0, 0.06);
     backdrop-filter: blur(17.899999618530273px);
     height: 83vh;
-    grid-template-rows: 60px auto auto;
-    grid-template-areas: "name" "layer1" "layer2";
+    grid-template-rows: 0.1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "name" "body";
   
   }
    
   .name{
     grid-area: "name";
-    background-color: #F4F1ED;
     color: black;
-    font-size: 40px;
+    font-size: 35px;
+    -webkit-text-stroke-width: 0.7241379022598267;
+    -webkit-text-stroke-color: #060606;
+    padding-top: 1.25vh;
+    padding-bottom: 4vh;
+    padding-left: 5vh;
   }
 
-
-.layer1 {
+  .body{
+    grid-area: "body";
     display: grid;
-    grid-area: "layer1";
-    background-color: #b47a2e;
-    color: black;
-    grid-template-columns: 0.4fr 0.2fr auto; 
-    grid-template-areas: "graph1 graph2 graph3"; 
-}
-
-.graph1 {
-    grid-area: graph1;
-    background-color: rgb(0, 0, 255);
-    border-radius: 15px;
-    margin: 15px;
-}
-
-.graph2 {
-    grid-area: graph2;
-    background-color: rgb(255, 0, 0);
-    border-radius: 15px;
-    margin: 15px;
-
+    grid-template-columns: 0.6fr 1fr 0.65fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "body_left" "body_mid" "body_right";
+    justify-content: center;
+    height: 90%;
+    padding-left: 5vh;
+    padding-right: 5vh;
   }
 
-.graph3 {
-    grid-area: graph3;
-    background-color: blue;
-    border-radius: 15px;
-    margin: 15px;
-}
-
-
-
-
-  .layer2{
+  .body_left{
+    grid-area: "body_left";
     display: grid;
-    grid-area: "layer2";
-    background-color: #b47a2e;
-    color: black;
-    grid-template-columns: 0.4fr 0.2fr auto; 
-    grid-template-areas: "graph4 graph5 graph6"; 
+    grid-template-rows: 0.35fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "BL_avg_data" "BL_other_data";
+    justify-content: center;
   }
-  .graph4 {
-    grid-area: graph3;
-    background-color: blue;
-    border-radius: 15px;
-    margin: 15px;
-}
 
-.graph5 {
-  grid-area: graph3;
-  background-color: blue;
-  border-radius: 15px;
-  margin: 15px;
-}
+  .BL_avg_data{
+    grid-area: "BL_avg_data";
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-areas: "avg_velocity" "avg_roadtime";
+    justify-content: center;
+    margin-bottom: 1vh;
+  }
 
-.graph6 {
-  grid-area: graph3;
-  background-color: blue;
-  border-radius: 15px;
-  margin: 15px;
-}
+  .BL_avg_data p{
+    font-family: "DM Sans";
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 0.25vh;
+  }
 
+  .BLA_velocity{
+    grid-area: "avg_velocity";
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 1.5vh;
+    background: #D5E3BB;
+    margin-right: 0.5vh;
+  }
+
+  .BLA_roadtime{
+    grid-area: "avg_velocity";
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 1.5vh;
+    background: #ffffff;
+    margin-left: 0.5vh;
+  }
+
+  .BLA_icon{
+    width: 30px;
+    height: 30px;
+  }
+
+  .BLA_velocity p{
+    color: #fff;
+  }
+
+  .BLA_roadtime p{
+    color: #555;
+  }
+  .BL_other_data{
+    grid-area: "BL_other_data";
+    display: grid;
+    border-radius: 20px;
+	  align-items: center;
+    text-align: center;
+    background: var(--Core-White, #FFF);
+  }
+
+  .BL_other_data p{
+    color: #060606;
+    font-weight: 700;
+  }
+
+  .body_mid{
+    grid-area: "body_mid";
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "BM_cam" "BM_data";
+    margin-left: 1vh;
+    margin-right: 1vh;
+  }
+  
+  .BM_cam{
+    grid-area: "BM_cam";
+    margin-bottom: 0.5vh;
+    border-radius: 12px;
+    background-color: #060606;
+  }
+
+  .BM_data{
+    grid-area: "BM_data";
+    display: grid;
+    grid-template-rows: 0.1fr 0.1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "BMD_header" "BMD_value" "BMD_graph";
+    margin-top: 0.5vh;
+    border-radius: 20px;
+    background-color: white;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    padding-top: 1vh;
+  }
+
+  .BMD_header{
+    grid-area: "BMD_header";
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+    color: #060606;
+    font-weight: 700;
+    font-size: 20px;
+    gap: 5px;
+  }
+
+  .BMD_header button{
+    height: 3.5vh;
+    width: 3.5vh;
+    border-radius: 12px;
+    border-color: #E0E0E0;
+    border-style: solid;
+    margin-left: auto;
+    background-image: url(/src/assets/expand_icon.svg);
+    background-color: #FFF;
+    background-position: center;
+    background-size: 75%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin-bottom: 0px;
+    transition-timing-function: ease-in-out;  
+    transition-duration: 0.1s;
+  }
+
+  .BMD_header button:hover{
+    border-color: #8f8f8f;
+  }
+  
+  .BMD_value{
+    
+    grid-area: "BMD_value";
+    display: inline-flex;
+    align-items:baseline;
+    gap:10px
+  }
+
+  .BMD_value h2{
+    color: #060606;
+    font-size:2vw;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .BMD_value h3{
+    color: #878787;
+    font-size:1vw;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .BMD_graph{
+    grid-area: "BMD_graph";
+  }
+
+  .body_right{
+    grid-area: "body_right";
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "BR_map" "BR_data";
+  }
+
+  .BR_map{
+    grid-area: "BR_map";
+    background-color: #060606;
+    border-radius: 12px;
+    margin-bottom: 0.5vh;
+  }
+
+  .BR_data{
+    grid-area: "BR_data";
+    display: grid;
+    grid-template-rows: 0.1fr 0.1fr 0.1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "BRD_header" "BRD_value" "BRD_detail" "BRD_graph";
+    margin-top: 0.5vh;
+    border-radius: 20px;
+    background-color: white;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    padding-top: 1vh;
+  }
+  .BRD_header{
+    grid-area: "BRD_header";
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+    color: #060606;
+    font-weight: 700;
+    font-size: 20px;
+    gap: 5px;
+  }
+
+  .BRD_header button{
+    height: 3.5vh;
+    width: 3.5vh;
+    border-radius: 12px;
+    border-color: #E0E0E0;
+    border-style: solid;
+    margin-left: auto;
+    background-image: url(/src/assets/expand_icon.svg);
+    background-color: #FFF;
+    background-position: center;
+    background-size: 75%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition-timing-function: ease-in-out;  
+    transition-duration: 0.1s;
+  }
+  .BRD_header button:hover{
+    border-color: #8f8f8f;
+  }
+
+  .BRD_detail{
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+  }
+
+  .BRD_header button:hover{
+    border-color: #8f8f8f;
+  }
+  
+  .BRD_value{
+    grid-area: "BRD_value";
+    display: inline-flex;
+    align-items:baseline;
+    gap:10px
+  }
+
+  .BRD_value h2{
+    color: #060606;
+    font-size:2vw;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .BRD_detail {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #878787;
+    font-weight: 700;
+    font-size: 1vw;
+    font-weight: 700;
+    gap: 5px
+  }
+
+  .BRD_legendL{
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: 5px;
+    gap: 5px;
+  }
+  .BRD_legendR{
+    margin-left: 0px;
+    display: inline-flex;
+    gap: 5px;
+  }
 
 
   .bottom {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    grid-template-areas: "page nav time";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "page" "nav" "time";
     z-index: 100;
     width: 100%;
     padding-bottom: 25px;
