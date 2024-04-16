@@ -102,3 +102,14 @@
 .notificationTabHidden {
   animation: fadeOut 0.2s ease-in-out forwards;
 }
+
+.inputbox{
+  border-radius: 11px;
+  background: rgba(111, 111, 111, 0.20);
+  box-shadow: 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px -0.85px 0.212px 0px rgba(255, 255, 255, 0.23) inset, 0px 3.399px 3.611px 0px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(5.310666084289551px);
+  border: none;
+  width: auto;
+  height: 30px;
+  margin-top: 5px;
+}
