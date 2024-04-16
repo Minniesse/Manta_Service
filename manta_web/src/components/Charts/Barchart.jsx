@@ -21,14 +21,14 @@ ChartJS.register(
   BarController
 );
 
-function Barchart(){
+const Barchart = (props) => {
     
     const data = {
-        labels: ['', '', '', '', '', '', '', '', '', ''],
+        labels: Array(props.num_of_points).join(".").split("."),
         datasets: [
           {
             backgroundColor: '#F6C943',
-            data: [95, 75, 40, 57, 60, 80, 40, 57, 75, 40,],
+            data: props.data,
             borderRadius: 10,
           },
           {
@@ -55,10 +55,11 @@ function Barchart(){
     };
 
     const graphStyle = {
-      maxHeight: "40vh",
+      maxHeight: "20vh",
       maxWidth: "40vw",
       width: "100%",
       height: "100%",
+      margin: "auto"
     };
 
     return (
@@ -66,8 +67,6 @@ function Barchart(){
         <Bar 
         className="bar_chart"data={data} 
         options={options}
-        width={100}
-        height={180}
         />
     </div>
     );
