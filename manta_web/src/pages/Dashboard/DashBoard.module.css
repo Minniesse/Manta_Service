@@ -54,7 +54,8 @@
     -webkit-text-stroke-color: #060606;
     padding-top: 1.25vh;
     padding-bottom: 4vh;
-    padding-left: 5vh;
+    margin-bottom: 0%;
+    padding-left: 2vw;
   }
 
   .body{
@@ -64,9 +65,10 @@
     grid-template-rows: 1fr;
     grid-template-areas: "body_left" "body_mid" "body_right";
     justify-content: center;
+    overflow: hidden;
     height: 90%;
-    padding-left: 5vh;
-    padding-right: 5vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
   }
 
   .body_left{
@@ -75,6 +77,7 @@
     grid-template-rows: 0.35fr 1fr;
     grid-template-columns: 1fr;
     grid-template-areas: "BL_avg_data" "BL_other_data";
+    overflow: hidden;
     justify-content: center;
   }
 
@@ -106,6 +109,48 @@
     margin-right: 0.5vh;
   }
 
+  .BLA_velocity h2{
+    margin-top: 0px;
+    color: #ffffff;
+  }
+
+  .BLA_prog_barV{
+    margin-top: 3vh;
+    height: 2vh;
+    width: 60%;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    background-color: #A4C663;
+  }
+
+  .BLA_prog_fillV{
+    height: 100%;
+    width: 0%;
+    border-radius: 12px;
+    transition: width 1s ease-in-out;
+    background-color: #FFFFFF;
+  }
+  .BLA_prog_barT{
+    margin-top: 3vh;
+    height: 2vh;
+    width: 60%;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    background-color: #F4F5F9;
+  }
+
+  .BLA_prog_fillT{
+    height: 100%;
+    width: 0%;
+    border-radius: 12px;
+    transition: width 0.5 ease-in-out;
+    background-color: #C86369;
+  }
+
   .BLA_roadtime{
     grid-area: "avg_velocity";
     border-radius: 12px;
@@ -115,6 +160,11 @@
     padding-top: 1.5vh;
     background: #ffffff;
     margin-left: 0.5vh;
+  }
+
+  .BLA_roadtime h2{
+    margin-top: 0px;
+    color: #060606;
   }
 
   .BLA_icon{
@@ -217,7 +267,7 @@
 
   .BMD_value h2{
     color: #060606;
-    font-size:2vw;
+    font-size:1.75vw;
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -230,7 +280,13 @@
   }
 
   .BMD_graph{
+    padding-top: 1vh;
     grid-area: "BMD_graph";
+  }
+
+  .bar_chart{
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .body_right{
@@ -311,7 +367,7 @@
 
   .BRD_value h2{
     color: #060606;
-    font-size:2vw;
+    font-size:1.75vw;
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -337,6 +393,12 @@
     display: inline-flex;
     gap: 5px;
   }
+
+  .BRD_graph{
+    grid-area: "BRD_graph";
+    padding-top: 1vh;
+  }
+
 
 
   .bottom {

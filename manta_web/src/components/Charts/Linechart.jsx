@@ -4,9 +4,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler);
 
-const LineGraph = () => {
-  const sampleData = [43, 40, 50, 40, 70];
-  const sampleData2 = [0, 20, 45, 70, 70];
+const LineGraph = (props) => {
 
   const canvasData = {
     datasets: [
@@ -14,7 +12,7 @@ const LineGraph = () => {
         borderColor: '#F6C943',
         pointRadius: 5,
         lineTension: 0.1,
-        data: sampleData,
+        data: props.today_count,
         borderWidth: 3,
         backgroundColor: '#F6C943',
       },
@@ -22,7 +20,7 @@ const LineGraph = () => {
         borderColor: '#0073F3',
         pointRadius: 5,
         lineTension: 0.1,
-        data: sampleData2,
+        data: props.avg_count,
         borderWidth: 3,
         backgroundColor: '#0073F3',
       }
@@ -64,12 +62,12 @@ const LineGraph = () => {
   };
 
   const graphStyle = {
-    maxHeight: "15vh",
-    maxWidth: "25vw",
-    width: "100%",
-    height: "100%",
+    maxHeight: "18vh",
+    maxWidth: "30vw",
+    width: "90%",
+    height: "90%",
     borderRadius: "0.375rem",
-    padding: "0.5rem",
+    margin: "auto"
   };
 
   return (
